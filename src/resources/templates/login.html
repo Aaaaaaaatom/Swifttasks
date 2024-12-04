@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Sistema De Gerenciamento de Tarefas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 40%;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .top-section {
+            height: 40%;
+            background: linear-gradient(135deg, #f3a683, #f7d794, #778beb, #e77f67, #cf6a87);
+            background-size: cover;
+            background-blend-mode: overlay;
+            filter: blur(3px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .top-section h1 {
+            color: white;
+            font-size: 36px;
+            text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            filter: blur(0); /* Keeps text sharp despite the background blur */
+        }
+
+        .form-section {
+            padding: 30px;
+        }
+
+        .form-section h2 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            color: #343a40;
+            text-align: center;
+        }
+
+        .form-section p {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #6c757d;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #495057;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .signup-prompt {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup-prompt a {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Top Section with Blurred Background -->
+    <div class="top-section">
+        <h1>Bem vindo(a) de volta!</h1>
+    </div>
+
+    <!-- Login Form Section -->
+    <div class="form-section">
+        <h2>Faça login na sua conta</h2>
+        <p>Entre com suas credenciais para acessar o sistema.</p>
+        <form action="/login" method="post">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Coloque seu email">
+
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha">
+
+            <button type="submit">LOGIN</button>
+        </form>
+        <a href="/forgot-password">Esqueceu a Senha?</a>
+        <div class="signup-prompt">
+            <p>Não tem uma conta? <a href="/register">Cadastre-se Agora!</a></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

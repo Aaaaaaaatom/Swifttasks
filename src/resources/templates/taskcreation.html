@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Nova Tarefa</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ecf0f1;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #34495e;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #34495e;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-actions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-button {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .cancel-button {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .submit-button:hover {
+            background-color: #2ecc71;
+        }
+
+        .cancel-button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h1>Criar nova Tarefa</h1>
+    <form action="#" method="POST" enctype="multipart/form-data">
+        <!-- Task Name -->
+        <div class="form-group">
+            <label for="task-name">Nome</label>
+            <input type="text" id="task-name" name="task-name" placeholder="Digite o nome da tarefa" required>
+        </div>
+
+        <!-- Task Image -->
+        <div class="form-group">
+            <label for="task-image">Imagem</label>
+            <input type="file" id="task-image" name="task-image" accept="image/*">
+        </div>
+
+        <!-- Small Description -->
+        <div class="form-group">
+            <label for="small-description">Pequena Descrição</label>
+            <textarea id="small-description" name="small-description" placeholder="Escreva uma pequena descrição da tarefa" required></textarea>
+        </div>
+
+        <!-- Larger Description -->
+        <div class="form-group">
+            <label for="large-description">Descrição maior</label>
+            <textarea id="large-description" name="large-description" placeholder="Escreva uma descrição detalhada da tarefa" required></textarea>
+        </div>
+
+        <!-- Form Buttons -->
+        <div class="form-actions">
+            <button type="submit" class="submit-button">CRIAR NOVA TAREFA</button>
+            <button type="button" class="cancel-button" onclick="window.history.back()">CANCELAR</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
